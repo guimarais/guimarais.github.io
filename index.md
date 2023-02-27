@@ -8,14 +8,6 @@ title: Bad code done quick
 
 # Bad code done quick
 
-## Including markdown from other files
-
-```php
-<!-- include: included-file.md -->
-```
-
-#include "third_post.md"
-
 ## How I made this page
 
 Well... I asked chatgpt nicely.  
