@@ -8,6 +8,34 @@ title: Bad code done quick
 
 # Bad code done quick
 
+## How I made this page
+
+Well... I asked chatgpt nicely.
+Here are the prompts:
+
+```markdown
+test
+
+```
+
+```css
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  margin: 20px;
+}
+
+```
+
 ## My First Blog Post
 
 Just testing github.  
