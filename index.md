@@ -93,18 +93,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, ipsum vel c
 You can customize the content and design of your blog by editing the Markdown and using a static site generator like Jekyll to generate your site. You can add more blog posts by creating new Markdown files in the root directory of the repository and linking to them from the index.md file.
 ```
 
+But is it possible to use markdown and css?
 
-Luis Guimarais
+```markdown
+**Prompy**
 Is it possible to have a style sheet with markdown in that page?
 
+**Answer**
 Yes, it's possible to use CSS styles with Markdown in your webpage. Here's how you can do it:
+1. Create a new file in the root directory of the repository called style.css.
+2. Paste the following CSS code into the file to style the header and main sections of your page:
+```
 
-    Create a new file in the root directory of the repository called style.css.
-
-    Paste the following CSS code into the file to style the header and main sections of your page:
-
-css
-
+```css
 header {
   background-color: #333;
   color: white;
@@ -119,12 +120,14 @@ h1 {
 main {
   margin: 20px;
 }
+```
 
-    Save the file and commit the changes to the repository.
+```
+1. Save the file and commit the changes to the repository.
+2. Open your index.md file and add a link to the style.css file in the <head> section of the Markdown document:
+```
 
-    Open your index.md file and add a link to the style.css file in the <head> section of the Markdown document:
-
-markdown
+```markdown
 
 ---
 title: My Blog
@@ -143,24 +146,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, ipsum vel c
 ---
 
 © 2023 My Name
+```
 
-    Save the file and commit the changes to the repository.
-
-    Push the changes to the Github repository.
-
-    Visit <your-username>.github.io in your web browser to see your new blog with styles applied.
+```
+1. Save the file and commit the changes to the repository.
+2. Push the changes to the Github repository.
+3. Visit <your-username>.github.io in your web browser to see your new blog with styles applied.
 
 You can add more styles to your CSS file to customize the appearance of your blog.
-Luis Guimarais
+```
+
+Let's say you want to include an interactive vizualization in this markdown blog.  
+I really like Altair.
+
+```m̀arkdown
+**Prompt**
 How can I add an html file inside the previous markdown file?
 
+**Answer**
 You can add an HTML file inside your Markdown file using an HTML iframe. Here's how you can do it:
+1. Create a new HTML file in the root directory of the repository called my-iframe.html.
+2. Paste the following code into the file to create a simple HTML page with an iframe element:
 
-    Create a new HTML file in the root directory of the repository called my-iframe.html.
+```
 
-    Paste the following code into the file to create a simple HTML page with an iframe element:
-
-html
+```html
 
 <!DOCTYPE html>
 <html>
@@ -173,13 +183,15 @@ html
   </body>
 </html>
 
+```
+
+```m̀arkdown
 This code creates a page with a title "My Iframe", a heading "My Iframe", and an iframe element that displays the Google homepage.
+1. Save the file and commit the changes to the repository.
+2. Open your index.md file and add the following Markdown code where you want the iframe to appear:
+```
 
-    Save the file and commit the changes to the repository.
-
-    Open your index.md file and add the following Markdown code where you want the iframe to appear:
-
-markdown
+```markdown
 
 ---
 title: My Blog
@@ -201,56 +213,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, ipsum vel c
 
 © 2023 My Name
 
+```
+
+```m̀arkdown
 This code creates an iframe element that displays the my-iframe.html file. The height and width attributes control the size of the iframe.
-
-    Save the file and commit the changes to the repository.
-
-    Push the changes to the Github repository.
-
-    Visit <your-username>.github.io in your web browser to see your new blog with the iframe embedded in the Markdown page.
-
-
-
-
-
-```markdown
----
-title: My Blog
----
-
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-# My Blog
-
-## My First Blog Post
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, ipsum vel consequat efficitur, velit urna rutrum nisi, eget consectetur orci erat eu elit. Nulla sed feugiat elit, vel pellentesque tortor. Mauris ut quam nulla. Morbi varius, dolor ac malesuada bibendum, lacus ex tincidunt eros, vel malesuada velit velit ac lacus. In non nisi sapien.
-
----
-
-© 2023 My Name
+1. Save the file and commit the changes to the repository.
+2. Push the changes to the Github repository.
+3. Visit <your-username>.github.io in your web browser to see your new blog with the iframe embedded in the Markdown page.
 
 ```
 
-```css
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-  margin: 0;
-}
-
-main {
-  margin: 20px;
-}
-
-```
 
 ## My First Blog Post
 
