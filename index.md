@@ -14,7 +14,7 @@ title: Bad code done quick
 <!-- include: included-file.md -->
 ```
 
-<!-- include: third_post.md -->
+#include "third_post.md"
 
 ## How I made this page
 
