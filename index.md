@@ -8,6 +8,74 @@ title: Bad code done quick
 
 # Bad code done quick
 
+## Simple geopandas merge and plot with altair
+
+```python
+import altair as alt
+import pandas as pd
+import geopandas as gpd
+import gpdvega
+import os
+
+# Where to get the shapefile file and download it if you don't have it
+filename = "ne_110m_admin_0_countries.zip"
+url = f"https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/{filename}"
+if not os.path.exists(filename):
+    os.system(f"wget {url}")
+filgp = f"{filename}!ne_110m_admin_0_countries.shp"
+
+# Reads into geopandas dataframe
+gdf = gpd.read_file(filgp)
+
+# Remove Antartica
+gdfn = gdf[gdf["ADMIN"] != "Antarctica"].reset_index(drop=True).copy(deep=True)
+gdfn.rename(columns={"ADMIN": "Entity"}, inplace=True)
+
+# Gets another dataframe to enrich geopandas dataframe
+dco2 = pd.read_csv(
+    "https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv"
+)
+
+year_max = dco2.year.max()
+dco2ly = dco2[dco2["year"] == year_max][["country", "population", "co2"]].copy(
+    deep=True
+)
+dco2ly.rename(columns={"country": "Entity"}, inplace=True)
+
+# Clean up to fix merge
+country_dict = {
+    "United States": "United States of America",
+    "Tanzania": "United Republic of Tanzania",
+    "Democratic Republic of Congo": "Democratic Republic of the Congo",
+    "Serbia": "Republic of Serbia",
+}
+
+dco2ly.replace({"Entity": country_dict}, inplace=True)
+
+country_dict2 = {"Ivory Coast": "Cote d'Ivoire"}
+gdfn.replace({"Entity": country_dict2}, inplace=True)
+
+# Merge into new pandas dataframe
+drich = gdfn.merge(dco2ly, on=["Entity"], how="left")
+
+# Plot
+chart = (
+    alt.Chart(drich, title="Emissions and population by country")
+    .mark_geoshape()
+    .project()
+    .encode(
+        color=alt.Color("co2", scale=alt.Scale(type="log")),
+        tooltip=["Entity", "population", "co2"],
+    )
+    .properties(width=1000, height=600)
+)
+
+chart.save("world.html")
+
+```
+<iframe src="./figures/world.html" height="600px" width="1000px"></iframe>
+
+
 ## How I made this page
 
 Well... I asked chatgpt nicely.  
