@@ -73,7 +73,7 @@ chart = (
 chart.save("world.html")
 
 ```
-<iframe src="./figures/world.html" height="600px" width="1000px"></iframe>
+<iframe src="./world/world.html" height="600px" width="1000px"></iframe>
 
 
 ## How I made this page
