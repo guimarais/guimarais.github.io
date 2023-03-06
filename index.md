@@ -76,8 +76,8 @@ chart.save("world.html")
 <div>
   <iframe id="inlineFrameExample"
       title="za warudo"
-      width="500px"
-      height="300px"
+      width="1000px"
+      height="600px"
       src="./figures/world.html">
   </iframe>
 </div>
