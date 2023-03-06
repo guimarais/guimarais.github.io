@@ -73,7 +73,14 @@ chart = (
 chart.save("world.html")
 
 ```
-<iframe src="./world/world.html" height="600px" width="1000px"></iframe>
+<div>
+  <iframe id="inlineFrameExample"
+      title="za warudo"
+      width="1000px"
+      height="600px"
+      src="./world/world.html">
+  </iframe>
+</div>
 
 
 ## How I made this page
@@ -313,9 +320,9 @@ alt.Chart(source).mark_rect().encode(
 ).interactive().save("tooltip1.html")
 
 ```
-
+<!---
 <iframe src="./figures/tooltip1.html" height="300px" width="100%"></iframe>
-
+-->
 ---
 
 © 2023 Luis Guimarais
